@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import { A } from 'hookrouter';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -25,9 +26,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Header(props) {
+const sections = [
+  { title: 'About', url: '/about' },
+  { title: 'Projects', url: '#' },
+  { title: 'Art', url: '#' },
+  { title: 'Blog', url: '#' },
+  { title: 'Contact', url: '#' },
+];
+
+export default function Header() {
   const classes = useStyles();
-  const { sections, title } = props;
 
   return (
     <React.Fragment>
@@ -41,7 +49,7 @@ export default function Header(props) {
           noWrap
           className={classes.toolbarTitle}
         >
-          {title}
+          Aloha!
         </Typography>
         <IconButton>
           <SearchIcon />
@@ -54,6 +62,7 @@ export default function Header(props) {
             noWrap
             key={section.title}
             variant="body2"
+            component={A}
             href={section.url}
             className={classes.toolbarLink}
           >
