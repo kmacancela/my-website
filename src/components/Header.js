@@ -7,7 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { A } from 'hookrouter';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -28,10 +27,10 @@ const useStyles = makeStyles(theme => ({
 
 const sections = [
   { title: 'About', url: '/about' },
-  { title: 'Projects', url: '#' },
-  { title: 'Art', url: '#' },
-  { title: 'Blog', url: '#' },
-  { title: 'Contact', url: '#' },
+  { title: 'Projects', url: '/projects' },
+  { title: 'Art', url: '/art' },
+  { title: 'Blog', url: 'https://medium.com/@kmacancela' },
+  { title: 'Contact', url: '/contact' },
 ];
 
 export default function Header() {
@@ -49,7 +48,7 @@ export default function Header() {
           noWrap
           className={classes.toolbarTitle}
         >
-          Aloha!
+          
         </Typography>
         <IconButton>
           <SearchIcon />
@@ -62,7 +61,6 @@ export default function Header() {
             noWrap
             key={section.title}
             variant="body2"
-            component={A}
             href={section.url}
             className={classes.toolbarLink}
           >
