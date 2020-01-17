@@ -8,7 +8,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CreateIcon from '@material-ui/icons/Create';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import Grid from '@material-ui/core/Grid';
 
 function Copyright() {
   return (
@@ -41,10 +40,10 @@ const nav = [
 ]
 
 const social = [
-  { icon: GitHubIcon, url: 'https://github.com/kmacancela' },
-  { icon: LinkedInIcon, url: 'https://www.linkedin.com/in/kmacancela/' },
-  { icon: CreateIcon, url: 'https://medium.com/@kmacancela'},
-  { icon: TwitterIcon, url: 'https://twitter.com/coolkatwizard'},
+  { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/kmacancela' },
+  { name: 'LinkedIn', icon: LinkedInIcon, url: 'https://www.linkedin.com/in/kmacancela/' },
+  { name: 'Medium', icon: CreateIcon, url: 'https://medium.com/@kmacancela'},
+  { name: 'Twitter', icon: TwitterIcon, url: 'https://twitter.com/coolkatwizard'},
 ]
 
 export default function Footer() {
@@ -55,14 +54,14 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Typography variant="subtitle1" align="center">
           {social.map(network => (
-            <Link className={classes.icons} href={network.url} key={network}>
+            <Link className={classes.icons} href={network.url} key={network.name}>
                 <network.icon />
             </Link>
           ))}
         </Typography>
         <Typography variant="body2" align="center" color="textSecondary" component="p" spacing={1}>
           {nav.map(navItem => (
-            <Link className={classes.icons} href={navItem.url} key={navItem}>
+            <Link className={classes.icons} href={navItem.url} key={navItem.name}>
               {navItem.name}
             </Link>
           ))}

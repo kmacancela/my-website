@@ -23,14 +23,20 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     flexShrink: 0,
   },
+  progress: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
 }));
 
 const sections = [
-  { title: 'About', url: '/about' },
-  { title: 'Projects', url: '/projects' },
-  { title: 'Art', url: '/art' },
-  { title: 'Blog', url: 'https://medium.com/@kmacancela' },
-  { title: 'Contact', url: '/contact' },
+  { title: 'ABOUT', url: '/about' },
+  { title: 'PROJECTS', url: '/projects' },
+  { title: 'ART', url: '/art' },
+  { title: 'BLOG', url: 'https://medium.com/@kmacancela' },
+  { title: 'CONTACT', url: '/contact' },
 ];
 
 export default function Header() {
@@ -48,7 +54,6 @@ export default function Header() {
           noWrap
           className={classes.toolbarTitle}
         >
-          
         </Typography>
         <IconButton>
           <SearchIcon />
